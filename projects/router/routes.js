@@ -10,17 +10,20 @@ FlowRouter.route("/projects/add", {
   }
 });
 
-// Add route to return a single JSON object containing the specified project.
-JsonRoutes.add("get", "/projects/:projectId", function (req, res, next) {
-  var projectId = req.params.projectId; // The project id, in MongoDB
-  var singleProject = Projects.findOne(projectId) // Finds matching project and returns object.
 
-  JsonRoutes.sendResult(res, 200, singleProject); // Sends the result to client
+FlowRouter.route('/projects/add/:step?', {
+  name: 'addProject',
+  action: function(params, queryParams) {
+    if (!params.step) {
+      FlowRouter.go('addProject', {step: 'basic-information'})
+    } else {
+      BlazeLayout.render('mainLayout', {main: 'addProject'})
+    }
+  },
 });
 
-// Returns JSON array containing all projects in Projects collection.
-JsonRoutes.add("get", "/projects", function (req, res, next) {
-  var allProjects = Projects.find().fetch(); // Finds all projects and returns array
-
-  JsonRoutes.sendResult(res, 200, allProjects); // Sends the result to client
+FlowRouter.route('/projects/orders/:_id', {
+  action: function(params) {
+    BlazeLayout.render('mainLayout', {main: 'viewOrder'})
+  }
 });

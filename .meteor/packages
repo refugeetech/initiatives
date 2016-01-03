@@ -28,3 +28,5 @@ kadira:flow-router
 kadira:blaze-layout
 fortawesome:fontawesome
 simple:json-routes
+forwarder:autoform-wizard
+forwarder:autoform-wizard-flow-router

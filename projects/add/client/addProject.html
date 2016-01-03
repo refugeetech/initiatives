@@ -1,26 +1,9 @@
 <template name="addProject">
-    <div class="page-header">
-      <h2>Add Project</h2>
-    </div>
-      {{# autoForm collection="Projects" id="insertProjectForm" type="insert" }}
-      {{> afQuickField name='name' autofocus='true'}}
+  {{> wizard id="addProject" route="addProject" steps=steps stepsTemplate="steps_bootstrap3" buttonClasses="btn"}}
+</template>
 
-      {{> afQuickField name='description' rows=5 }}
+<template name="viewOrder">
+  <p>Thanks for your order {{name}}.</p>
 
-      {{> afQuickField name="shortDescription" }}
-
-      {{> afFormGroup name="problemCategories" type="select-checkbox"}}
-
-      {{> afQuickField name="tags" }}
-
-      {{> afFormGroup name="currentStage"}}
-
-      {{> afQuickField name="targetPlatforms" }}
-
-      {{> afQuickField name="postalAddress"}}
-      
-      {{> afQuickField name="links"}}
-
-      <button type="submit" class="btn btn-primary">Submit Project</button>
-    {{/ autoForm }}
+  <a href="/" class="btn">Place another order</a>
 </template>

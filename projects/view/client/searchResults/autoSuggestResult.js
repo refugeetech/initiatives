@@ -1,8 +1,11 @@
 Template.autoSuggestProjectResult.events({
     'click.result':function(e) {
         FlowRouter.go(/projects/+this._id);
-        $('#searchbar input').blur();
-        $('#searchbar input').val(this.name);
+        //Reset som stuff
+        $('#searchbar').toggleClass('active');
+        $('#searchbar input').val("");
         Session.set('willShowAutoSuggestion',false);
+        Session.set('willShowSearchResults',false);
+        ProjectsIndex.getComponentMethods().search("");
     }
 });

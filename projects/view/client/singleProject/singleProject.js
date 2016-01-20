@@ -18,3 +18,14 @@ Template.singleProject.helpers({
 		}
 	}
 });
+
+Template.singleProject.events({
+   'click .projectRoute':function(event,template) {
+        //cath click event on link to project to reset some stuff before routing (this should really be done using the router methods because we dont want the searchbar to keep its state whenever a route has occured)
+        $('#searchbar').removeClass('active');
+        $('#searchbar input').val("");
+        Session.set('willShowAutoSuggestion',false);
+        Session.set('willShowSearchResults',false);
+        ProjectsIndex.getComponentMethods().search("");
+   } 
+});

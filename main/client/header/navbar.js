@@ -4,6 +4,8 @@ if (Meteor.isClient) {
   // Runs when the DOM is ready
   
   Session.set('willShowAutoSuggestion',false);
+  Session.set('willShowSearchResults',false);
+  
 
     const NAVBAR_HEIGHT = 75; // original navbar height in px
 
@@ -42,8 +44,21 @@ if (Meteor.isClient) {
           $('#searchbar input').focus();
           //show autosuggestions only if input has focus
           Session.set('willShowAutoSuggestion',true);
+          $('#searchbar').toggleClass('active'); // Toggle the searchbar
       }
-      $('#searchbar').toggleClass('active'); // Toggle the searchbar
+      else {
+            // Allow for a potential click to be registered in searchresults/autosuggestion template before replacing/hiding it with another through the session variable willShowSearchResults/willShowAutoSuggestion
+            window.setTimeout(function() { 
+                Session.set('willShowSearchResults',false);
+                Session.set('willShowAutoSuggestion',false);
+            }, 1000);
+            $('#searchbar input').val("");
+            ProjectsIndex.getComponentMethods().search("");
+            // Toggle the searchbar
+            $('#searchbar').toggleClass('active');
+      }
+      
+      
       
     }
   });

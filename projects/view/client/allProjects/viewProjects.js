@@ -4,5 +4,6 @@ Template.viewProjects.helpers({
     var projects = Projects.find();
 
     return projects;
-  }
+  },
+  shouldShowSearchResults: () => Session.get('willShowSearchResults')
 });

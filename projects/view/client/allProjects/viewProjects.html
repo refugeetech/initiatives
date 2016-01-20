@@ -3,7 +3,12 @@
     <a class="btn btn-primary pull-right" href="/projects/add" role="button">Add Project</a>
     <h1>View all projects</h1>
   </div>
-  
+  <!-- showing all projects if not searching -->
+  {{#if shouldShowSearchResults}}
   {{> searchResults }}
+  {{else}}
+  <!-- Currently this justs fetches all projects and displays them. @todo Looking at the mockup we will also need to group them based on location and category -->
+  {{> allProjects}}
+  {{/if}}
   
 </template>

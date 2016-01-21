@@ -2,6 +2,11 @@ body {
   margin-top: 3.7em; /* Ensure body is not covered by top navbar */
   font-size: 16px;
 }
+@media only screen and (max-width: 767px) { /* xs */
+  body {
+    margin-top: calc(63/16 * 1em); /* The top navbar is smaller on xs screens  */
+  }
+}
 
 /* ==========================================================================
    Typography | TODO: Consider using font-weights like this: https://www.smashingmagazine.com/2013/02/setting-weights-and-styles-at-font-face-declaration/ --> Style Linking

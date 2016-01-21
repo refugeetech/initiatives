@@ -2,7 +2,7 @@ if (Meteor.isClient) {
 
   Meteor.startup(function() {
   // Runs when the DOM is ready
-  
+
   Session.set('willShowAutoSuggestion',false);
 
     const NAVBAR_HEIGHT = 75; // original navbar height in px
@@ -10,11 +10,11 @@ if (Meteor.isClient) {
     var $window    = $(window),
         $document  = $(document),
         $searchbar = $('#searchbar');
-        
+
 
     $window.on('scroll', function(e) {
     // The scroll event is not supported yet by Meteor https://github.com/meteor/meteor/issues/3298,
-    // so we use a jquery instead. 
+    // so we use a jquery instead.
     // This block runs whenever the page is scrolled
       toggleNavbarClass();
     });
@@ -44,7 +44,10 @@ if (Meteor.isClient) {
           Session.set('willShowAutoSuggestion',true);
       }
       $('#searchbar').toggleClass('active'); // Toggle the searchbar
-      
+    },
+
+    'click #close-search': function(event) {
+      $('#searchbar').removeClass('active');
     }
   });
 }

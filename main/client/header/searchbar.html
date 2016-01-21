@@ -1,5 +1,12 @@
 <template name="searchbar">
   <div class="navbar-fixed-top" id="searchbar">
-    <div class="container"><div class="hidden" id="spinner">{{> spinner}}</div>{{> searchBox}}</div>
+    <div class="container">
+      <div class="hidden" id="spinner">{{> spinner}}</div>
+      {{> searchBox}}
+      <div class="pull-right" id="close-search">Close search
+        <!-- <span class="char-x"></span> -->
+        <!-- <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> -->
+      </div>
+    </div>
   </div>
 </template>

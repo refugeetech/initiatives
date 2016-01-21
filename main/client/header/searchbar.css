@@ -23,7 +23,7 @@
     transform: translateY(calc(56/16 * 1em));
   }
   #searchbar input#search {
-    width: 100%;
+    width: 80%; /* subtract the width of #close-search */
     background: inherit;
     border: none;
     font-size: 2em;
@@ -49,7 +49,18 @@
     height: calc(77/16 * 1em);
     transform: scale(0.5);
   }
-
+  #close-search {
+    font-size: 1.3em;
+    padding: calc(43/38.4 * 1em) 0; /* (searchbarHeight-closeSearchHeight)/(2*16*1.3em) */
+    color: #b3b3b3;
+    cursor: pointer;
+  }
+  #close-search:after {
+    content: 'X'; /* Use an icon instead. Bootstrap's glyph is not so nice though. */
+    font-weight: 300;
+    font-family: Arial, sans-serif;
+    margin-left: .3em;
+  }
 }
 
 @media only screen and (min-width: 992px) { /* md */

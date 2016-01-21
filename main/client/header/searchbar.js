@@ -9,7 +9,7 @@ if(Meteor.isClient) {
           $('#spinner').addClass('hidden')
         }, 1500);
       },
-      'blur input':function(event,template) {
+      'blur input': function(event, template) {
           $('#searchbar').removeClass('active'); //hide the searchbar when input blurs
       }
   });

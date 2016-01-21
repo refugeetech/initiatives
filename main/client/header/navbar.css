@@ -20,7 +20,7 @@
 #top-nav.navbar-default .navbar-nav > li.active > a,
 #top-nav.navbar-default .navbar-nav > li.active > a:hover,
 #top-nav.navbar-default .navbar-nav > li > a:focus  {
-  font-weight: bold;
+  font-family: 'Lab Grotesque Bold';
   color: inherit;
   background: none;
 }
@@ -108,6 +108,7 @@
     height: calc(55/16 * 1em);
   }
   #top-nav .navbar-nav a {
+    font-family: 'Lab Grotesque Medium';
     transition: all .1s ease-out;
     transition-property: padding;
   }
@@ -135,7 +136,7 @@
   /* =========== Right Navbar =========== */
 
   #top-nav .navbar-right {
-    font-weight: bold;
+    font-family: 'Lab Grotesque Bold';
   }
   #top-nav .navbar-right .glyphicon {
     top: .2em;

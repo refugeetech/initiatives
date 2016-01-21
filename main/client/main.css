@@ -59,8 +59,11 @@ body {
  }
 
 body {
-  font-family: "Lab Grotesque Regular", Helvetica, sans-serif; font-weight:normal; font-style:normal;;
+  font-family: "Lab Grotesque Regular", Helvetica, sans-serif; 
+  font-weight:normal;
+  font-style:normal;
 }
+
 
 /* ==========================================================================
    Helper classes

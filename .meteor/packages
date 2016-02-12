@@ -42,3 +42,6 @@ jeremy:selectize
 zimme:active-route
 yogiben:autoform-file
 yogiben:admin
+accounts-ui
+accounts-github
+accounts-google
